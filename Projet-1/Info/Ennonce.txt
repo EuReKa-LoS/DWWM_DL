@@ -1,0 +1,5 @@
+1) Titre
+2) Inscription/Connexion/BDD
+3) Mot de passe crypté (10 caractère minimum)
+4) Bootstrap
+5) CRUD
