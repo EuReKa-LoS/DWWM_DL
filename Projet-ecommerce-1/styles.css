@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Pentay-Book';
+         src: url('Fonts/pentay_book/Pentay-Book-ffp.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header>h1 {
+font-family: 'Pentay-Book';
+float: left;
+margin: 0 0 18px 10px;
+width: 600px;
+color: #f0ef01;
+font-size: 45px;
+line-height: 40px;
+text-shadow: 3px 3px 3px green;
+}
