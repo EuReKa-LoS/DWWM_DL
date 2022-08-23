@@ -9,7 +9,6 @@
 //10d.svg // Pluie
 //11d.svg // Orage
 //13d.svg // Neigeux
-// API_KEY dfa8c0baa07489cd9a42eaa45a08c77a
 let API_key="49cc8c821cd2aff9af04c9f98c36eb74"
 //
 //const time = new Date();
@@ -25,12 +24,6 @@ const minImage = document.querySelector("#miniWeatherBug img")
 const previsionsHeures = document.querySelector("#previsionsHeures")
 const previsionsSemaine = document.querySelector("#previsionsSemaine")
 //url current ville Paris FR en 2.5:
-
-
-//url= `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=1edabae8aae767df651cc323c8677c57`
-//url=`https://api.openweathermap.org/data/3.0/onecall?lat=22&lon=58&exclude={part}&appid=1edabae8aae767df651cc323c8677c57`;
-//url=`https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=dfa8c0baa07489cd9a42eaa45a08c77a&units=metric&lang=fr`;
-
 
 //Zone Geolocalisation
 document.querySelector("#findLocation").addEventListener("click", geoLookUp, false)
