@@ -1,0 +1,169 @@
+<?php
+$num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']):0;
+$num_fav = isset($_SESSION['fav']) ? count($_SESSION['fav']):0;
+?>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> 03 28 29 30 31</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> projet@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 59140 Dunkerque</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<!-- <li><a href="#"><i class="fa fa-dollar"></i> Inscription</a></li> -->
+                        <?php 
+                        //si session active affiché mon compte sinon connexion
+                        if (isset($_SESSION['prenom']) and isset($_SESSION['nom']))
+                        {
+                          echo "<li><a href='/admin/dashboard.php'><i class='fa fa-user-o'></i> Mon compte</a></li>";
+						  echo "<li><a href='/admin/logout.php'>Déconnexion</a></li></ul>";
+                        }
+                        else
+                        {
+                          echo "<li><a href='/admin/connexion.php'><i class='fa fa-user-o'></i> Connexion</a></li>";
+						  
+                        }
+
+                        ?>
+						
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="/index.php" class="logo">
+									<img src="/img/logo.png" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<!--<form>
+									<select class="input-select">
+										<option value="0">Choisis</option>
+										<option value="1">Category 01</option>
+										<option value="1">Category 02</option>
+										<option value="1">Category 03</option>
+										<option value="1">Category 04</option>
+										<option value="1">Category 05</option>
+										<option value="1">Category 06</option>
+									</select>
+									<input class="input" placeholder="Recherche ici">
+									<button class="search-btn">Recherche</button>
+								</form>-->
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Wishlist -->
+								<div>
+									<!--<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Favoris</span>
+										
+										<div class="qty"><?= $num_fav?></div>
+									</a>
+					-->
+								</div>
+								<!-- /Wishlist -->
+
+								<!-- Cart -->
+								<?php
+								// Vérification des variable de session du CART (Panier pour Hervé)
+								$products_in_cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+								$products = array();
+								$subtotal = 0.00;
+								// Si j'ai de sproduit dans le CART (Panier pour Hervé)
+								if ($products_in_cart) {
+									// Il y a des produit dans le CART (Panier pour Hervé) alors je vais cherché les infos en base de donnée
+									// Je sais pas comment expliqué plus clairement ca=>Products in cart array to question mark string array, we need the SQL statement to include IN (?,?,?,...etc)
+									$array_to_question_marks = implode(',', array_fill(0, count($products_in_cart), '?'));
+									$stmt = $pdo->prepare('SELECT * FROM livres WHERE idLivre IN (' . $array_to_question_marks . ')');
+									// On prends les clés produit (pas les valeur), les clés sont les clés produit.
+									$stmt->execute(array_keys($products_in_cart));
+									// On chope les data de la BDD
+									$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+									// On calcule le sous-total
+									foreach ($products as $product) {
+										$subtotal += (float)$product['prixLivre'] * (int)$products_in_cart[$product['idLivre']];
+									}
+								}
+
+								?>
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Panier</span>
+										<div class="qty"><?= $num_items_in_cart?></div>
+									</a>
+									<div class="cart-dropdown">
+									<?php if (empty($products)) : ?>
+											<tr>
+												<td colspan="5" style="text-align:center;">Aucun produit dans votre panier.</td>
+											</tr>
+										<?php else : ?>
+											<?php foreach ($products as $product) : ?>
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+												<img src="img/<?= $product['imgLivre'] ?>" width="45" height="85" alt="<?= $product['titreLivre'] ?>">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">titre du livre</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>980.00 €</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+											<?php endforeach; ?>
+										<?php endif; ?>
+
+										</div>
+										<div class="cart-summary">
+											<small>3 Objet(s) selectionner</small>
+											<h5>TOTAL DU PANIER : 2940.00 €</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="cart.php">Voir le panier</a>
+											<a href="checkout.php">Valider  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
