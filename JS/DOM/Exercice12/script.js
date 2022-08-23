@@ -1,15 +1,4 @@
-//01d.svg // Soleil
-//02d.svg // Couvers
-/* --- Nuageux --- */
-//03d.svg // Nuageux
-//04d.svg // Nuageux
-//50d.svg // Nuageux-inversé
-/* -- Identique -- */
-//09d.svg // Légère pluie
-//10d.svg // Pluie
-//11d.svg // Orage
-//13d.svg // Neigeux
-let API_key="49cc8c821cd2aff9af04c9f98c36eb74"
+let API_key="your_key_here"
 //
 //const time = new Date();
 //const days = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
