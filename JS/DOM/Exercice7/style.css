@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(184, 179, 179);
+}
+section{
+    position: relative;
+    left: 45%;
+    margin-top: 50px;
+   
+}
+.container{
+    width: 0px;
+    background-color: pink;
+
+}
+.un{
+    margin-bottom: 20px;
+}
+#resultatMDP{
+    width: 500px;
+    margin-top: 50px;
+    padding: 30px;
+    position: absolute;
+    right: 80%;
+    
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <title>DOM : Exercice 10 - Quizz</title>
+</head>
+
+<body>
+    
+    
+    <div class="container border border-dark rounded-lg">
+        <h1 class="text-center bg-primary rounded-lg text-white p-2 m-2" id="header-quizz">Quizz</h1>
+        
+        <form class="form-quizz">
+            <div class="question-block m-2">
+                <legend>Qui est sacré empereur de France le 2 décembre 1804 ?</legend>
+                <div>
+                    <input type="radio" id="question1" name="question1" value="a"><label for="question1"> Clovis</label>
+                </div>
+                <div>
+                    <input type="radio" id="question1" name="question1" value="b"><label for="question1"> Abraham Lincoln</label>
+                </div>
+                <div>
+                    <input type="radio" id="question1" name="question1" value="c"><label for="question1"> Napoleon Bonaparte</label>
+                </div>
+            </div>
+            <div class="question-block m-2">
+                <legend>Quand la déclaration d'indépendance des Etats-Unis a-t-elle été votéee ?</legend>
+                <div>
+                    <input type="radio" id="question2" name="question2" value="a"><label for="question2"> 4 Juillet 1776</label>
+                </div>
+                <div>
+                    <input type="radio" id="question2" name="question2" value="b"><label for="question2"> 18 Avril 1856</label>
+                </div>
+                <div>
+                    <input type="radio" id="question2" name="question2" value="c"><label for="question2"> 30 Juin 1925</label>
+                </div>
+            </div>
+            <div class="question-block m-2">
+                <legend>Quand a eu lieu la chute de l'empire romain d'occident ?</legend>
+                <div>
+                    <input type="radio" id="question3" name="question3" value="a"><label for="question3">15 ap.J.-C.</label>
+                </div>
+                <div>
+                    <input type="radio" id="question3" name="question3" value="b"><label for="question3">476 ap.J.-C.</label>
+                </div>
+                <div>
+                    <input type="radio" id="question3" name="question3" value="c"><label for="question3">-740 ap.J.-C.</label>
+                </div>
+            </div>
+            <div class="question-block m-2">
+                <legend>Quelle est la capitale de la Slovénie ?</legend>
+                <div>
+                    <input type="radio" id="question4" name="question4" value="a"><label for="question4">Ljubljana</label>
+                </div>
+                <div>
+                    <input type="radio" id="question4" name="question4" value="b"><label for="question4">Belgrade</label>
+                </div>
+                <div>
+                    <input type="radio" id="question4" name="question4" value="c"><label for="question4">Bratislava</label>
+                </div>
+            </div>
+            <div class="question-block m-2">
+                <legend>Combien d'habitants compte l'Irlande en 2020 ?</legend>
+                <div>
+                    <input type="radio" id="question5" name="question5" value="a"><label for="question5">1,365 Million</label>
+                </div>
+                <div>
+                    <input type="radio" id="question5" name="question5" value="b"><label for="question5">21 Millions</label>
+                </div>
+                <div>
+                    <input type="radio" id="question5" name="question5" value="c"><label for="question5">4,9 Millions</label>
+                </div>
+            </div>
+            <div class="row m-1">
+                <button id="btnResult" class="col btn btn-primary m-2">Valider</button>
+            </div>
+        </form>
+        <div class="resultats text-center flex">
+            <h2 class="flex">Cliquez sur "Valider" pour voir les résultats.</h2>
+            <div id="note"><p>Votre note s'affichera ici</p></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="confetti.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+</body>
+</html>

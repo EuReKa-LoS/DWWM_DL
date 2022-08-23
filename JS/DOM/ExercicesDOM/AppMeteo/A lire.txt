@@ -1,0 +1,15 @@
+ Coder une application météo ☀️
+
+Fonctionnalités JavaScript à coder pour ce projet
+1)  Découvrez l'API que nous allons utiliser OpenWeaterMap.
+	- Baladez-vous sur le site et sur la doc pour vous familiariser avec : https://openweathermap.org/
+
+2) Utilisez la géolocatilisation du navigateur et appelez l'API en fonction de la latitude et longitude de votre position.
+
+3) Gérez les erreurs comme le refus de la geolocation ou une erreur 404 de l'API.
+
+4) Intégrez une icône en fonction de l'heure de la journée, grâce à l'ensemble d'icônes fournies dans le dossier ressources.
+
+5) Créez un système d'onglets pour afficher la température par heure et par jour.
+
+6) Affichez les données dans les petites cases des heures/jours.

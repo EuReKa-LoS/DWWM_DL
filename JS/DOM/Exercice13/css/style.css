@@ -1,0 +1,41 @@
+*{box-sizing: border-box}
+
+body
+{
+	margin:0;
+	display: grid;
+	place-items:center;
+	min-height:100vh;
+	
+}
+
+#masterTitle{
+	border:black;
+	background: linear-gradient(to right, blue 33%, white 33%, white 66%, red 66%);
+}
+.exemple
+{
+	display:flex;
+	margin:2rem auto;
+	max-width:500px
+}
+.svgtip
+{
+	max-width:100px;
+	--mini:14;
+	--maxi:16
+}
+.exemple path
+{
+	transition:.6s fill;
+	fill:#0087ff70;
+	stroke:white;
+	stroke-width:1
+}
+.exemple path:hover
+{
+	cursor:pointer;
+	fill:green
+}
+
+

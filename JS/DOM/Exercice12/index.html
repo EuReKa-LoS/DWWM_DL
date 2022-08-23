@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+
+    <title>DOM : Exercice 12 - Météo</title>
+  </head>
+
+  <body>
+    <div class="container text-center" id="weatherBug">
+      <h1>Application Météo</h1>
+      <img src="img/default.png" height="120" width="120"></img>
+      <p>Veuillez choisir une ville</p>
+      
+      <div class="container" >
+        <table class="mx-auto w-auto">
+          
+          <tbody id="tables">
+          
+          <td >
+            
+            <tr id="miniWeatherBug">
+
+            </tr>
+
+          </td>
+        </tbody>
+      </table>
+      <div id="boiteBouton" class="invisible">
+        <button id="previsionsHeures">Heures</button>
+        <button id="previsionsSemaine">Prévisions</button>
+      </div>
+      </div>
+      <div>
+        <button id="findLocation">Afficher ma localisation</button>
+        <p id="Status">Pas de localisation</p>
+      </div>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+  <script src="geoloc.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</html>
